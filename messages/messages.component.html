@@ -1,0 +1,12 @@
+<mat-spinner *ngIf="loading" [diameter]="40"></mat-spinner>
+<mat-card *ngFor="let message of messageList">
+    <mat-card-header>
+      <mat-card-title>{{ message.contactFormName }}</mat-card-title>
+      <mat-card-subtitle>{{ message.contactFormSubject }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+          {{ message.contactFormMessage }}
+      </p>
+    </mat-card-content>
+</mat-card>

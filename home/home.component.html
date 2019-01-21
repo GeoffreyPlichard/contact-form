@@ -1,0 +1,16 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate autocomplete="off" class="login-form">
+  <div class="log-form-field">
+    <mat-form-field>
+      <input matInput type="text" placeholder="login" [formControl]="login" required>
+    </mat-form-field>
+  </div>
+  <div class="log-form-field">
+    <mat-form-field>
+        <input matInput type="password" placeholder="password" [formControl]="password" required>
+    </mat-form-field>
+  </div>
+  <button mat-raised-button type="submit" [disabled]="!loginForm.valid || loggedIn" color="primary">Login</button>
+  <button mat-raised-button type="button" [disabled]="!loggedIn" (click)="onLogout()" color="primary">Logout</button>
+  <p *ngIf="loggedIn">Vous êtes connecté</p>
+  <p *ngIf="!loggedIn">Vous devez vous connecter pour voir les messages</p>
+</form>
